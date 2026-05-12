@@ -40,17 +40,21 @@ $users = $stmt->fetchAll();
                         </td>
                         <td><?= htmlspecialchars($user['email']) ?></td>
                         <td>
-                            <?php if($user['role_id'] == 1): ?>
-                                <span class="badge bg-danger text-white">Admin</span>
-                            <?php elseif($user['role_id'] == 2): ?>
-                                <span class="badge bg-warning text-dark">Employé</span>
-                            <?php else: ?>
-                                <span class="badge bg-info text-white">Client</span>
-                            <?php endif; ?>
+                            <form action="user_role_update.php" method="GET" class="d-inline">
+                                <input type="hidden" name="id" value="<?= $user['utilisateur_id'] ?>">
+                                <select name="role" class="form-select form-select-sm d-inline-block w-auto" onchange="this.form.submit()">
+                                    <option value="1" <?= $user['role_id'] == 1 ? 'selected' : '' ?>>Admin</option>
+                                    <option value="2" <?= $user['role_id'] == 2 ? 'selected' : '' ?>>Employé</option>
+                                    <option value="3" <?= $user['role_id'] == 3 ? 'selected' : '' ?>>Client</option>
+                                </select>
+                            </form>
                         </td>
                         <td>
-                            <button class="btn btn-sm btn-outline-secondary">Modifier</button>
-                            <button class="btn btn-sm btn-outline-danger">Supprimer</button>
+                            <a href="user_delete.php?id=<?= $user['utilisateur_id'] ?>" 
+                            class="btn btn-sm btn-outline-danger" 
+                            onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
+                            Supprimer
+                            </a>
                         </td>
                     </tr>
                     <?php endforeach; ?>
