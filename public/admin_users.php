@@ -34,7 +34,7 @@ $users = $stmt->fetchAll();
                 <tbody>
                     <?php foreach ($users as $user): ?>
                     <tr>
-                        <td>#<?= $user['id'] ?></td>
+                        <td>#<?= $user['utilisateur_id'] ?></td>
                         <td>
                             <div class="fw-bold"><?= htmlspecialchars($user['prenom'] . ' ' . $user['nom']) ?></div>
                         </td>
