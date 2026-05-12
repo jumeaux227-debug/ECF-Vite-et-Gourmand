@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($user && password_verify($password, $user['password'])) {
         
         // 4. ON REMPLIT LA SESSION ICI
-        $_SESSION['user_id'] = $user['id']; // Vérifie que c'est bien 'id' en BDD
+        $_SESSION['user_id'] = $user['utilisateur_id']; // Vérifie que c'est bien 'id' en BDD
         
         // ATTENTION ICI : Vérifie si ta colonne s'appelle 'prenom' ou 'nom' ou 'username'
         $_SESSION['user_name'] = $user['prenom']; 
