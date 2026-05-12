@@ -12,7 +12,7 @@ if (isset($_GET['id'])) {
     $id_to_delete = (int)$_GET['id'];
 
     
-    if ($id_to_delete === $_SESSION['user_id']) {
+    if ($id_to_delete === $_SESSION['utilisateur_id']) {
         header('Location: admin_users.php?error=self_delete');
         exit();
     }
