@@ -9,7 +9,7 @@ if (!isset($_SESSION['role_id']) || $_SESSION['role_id'] != 1) {
 }
 
 // Récupération des utilisateurs
-$stmt = $pdo->query("SELECT id, prenom, nom, email, role_id FROM utilisateur");
+$stmt = $pdo->query("SELECT utilisateur_id, prenom, nom, email, role_id FROM utilisateur");
 $users = $stmt->fetchAll();
 ?>
 
