@@ -1,0 +1,12 @@
+:root {
+    --main-orange: #FF7F50;
+    --dark-orange: #E66A3D;
+    --light-bg: #FFFFFF;
+}
+
+body { background-color: var(--light-bg); color: #333; font-family: 'Segoe UI', sans-serif; }
+.navbar { border-bottom: 2px solid var(--main-orange); }
+.btn-primary { background-color: var(--main-orange) !important; border: none !important; }
+.btn-primary:hover { background-color: var(--dark-orange) !important; transform: translateY(-2px); }
+.custom-card { border: none; border-radius: 15px; transition: 0.3s; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.custom-card:hover { transform: translateY(-10px); box-shadow: 0 12px 20px rgba(0,0,0,0.15); }
