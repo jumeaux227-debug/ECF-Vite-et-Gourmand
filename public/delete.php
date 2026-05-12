@@ -8,8 +8,8 @@ if (!isset($_SESSION['role_id']) || $_SESSION['role_id'] != 1) {
     exit();
 }
 
-if (isset($_GET['id'])) {
-    $id_to_delete = (int)$_GET['id'];
+if (isset($_GET['utilisateur_id'])) {
+    $id_to_delete = (int)$_GET['utilisateur_id'];
 
     
     if ($id_to_delete === $_SESSION['utilisateur_id']) {
