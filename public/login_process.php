@@ -1,28 +1,32 @@
 <?php
-session_start();
+session_start(); // 1. TRÈS IMPORTANT : Doit être la première ligne
 require_once __DIR__ . '/../includes/db_connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     $password = $_POST['password'];
 
-    // 1. On cherche l'utilisateur par son email
+    // 2. On cherche l'utilisateur (Assure-toi que la table s'appelle bien 'utilisateur')
     $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE email = ?");
     $stmt->execute([$email]);
     $user = $stmt->fetch();
 
-    // 2. On vérifie si l'utilisateur existe ET si le mot de passe haché correspond
+    // 3. Vérification
     if ($user && password_verify($password, $user['password'])) {
-        // Succès ! On stocke les infos en session
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['user_name'] = $user['prenom'];
+        
+        // 4. ON REMPLIT LA SESSION ICI
+        $_SESSION['user_id'] = $user['id']; // Vérifie que c'est bien 'id' en BDD
+        
+        // ATTENTION ICI : Vérifie si ta colonne s'appelle 'prenom' ou 'nom' ou 'username'
+        $_SESSION['user_name'] = $user['prenom']; 
+        
         $_SESSION['role_id'] = $user['role_id'];
 
+        // 5. Redirection
         header('Location: index.php');
         exit();
     } else {
-        // Erreur d'identifiants
-        header('Location: login.php?error=1');
+        header('Location: login.php?error=identifiants_incorrects');
         exit();
     }
 }
