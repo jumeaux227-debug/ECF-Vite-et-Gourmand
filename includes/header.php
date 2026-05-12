@@ -24,6 +24,13 @@ if (session_status() === PHP_SESSION_NONE) {
                 <span class="nav-link text-dark ms-3">
                     Bonjour, <strong><?= htmlspecialchars($_SESSION['user_name']) ?></strong>
                 </span>
+
+                <?php if(isset($_SESSION['role_id']) && $_SESSION['role_id'] == 1): ?>
+                    <a class="nav-link text-danger fw-bold ms-2" href="admin_users.php">
+                        <i class="bi bi-shield-lock"></i> Panel Admin
+                    </a>
+                <?php endif; ?>
+
                 <a class="btn btn-outline-danger btn-sm ms-3" href="logout.php">Déconnexion</a>
             <?php else: ?>
                 <a class="btn btn-primary text-white ms-3" href="login.php">Connexion</a>
