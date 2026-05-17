@@ -18,22 +18,29 @@ if (session_status() === PHP_SESSION_NONE) {
         <a class="navbar-brand fw-bold" href="index.php" style="color: var(--main-orange);">Vite et Gourmand</a>
         
         <div class="navbar-nav ms-auto align-items-center">
-            <a class="nav-link" href="index.php">Accueil</a>
-            
-            <?php if(isset($_SESSION['user_id'])): ?>
-                <span class="nav-link text-dark ms-3">
-                    Bonjour, <strong><?= htmlspecialchars($_SESSION['user_name']) ?></strong>
-                </span>
+            <a class="nav-link text-dark fw-bold ms-2" href="index.php">Accueil</a>
+            <a class="nav-link text-dark fw-bold ms-2" href="menus.php">Nos Menus</a>
 
-                <?php if(isset($_SESSION['role_id']) && $_SESSION['role_id'] == 1): ?>
-                    <a class="nav-link text-danger fw-bold ms-2" href="admin_users.php">
-                        <i class="bi bi-shield-lock"></i> Panel Admin
-                    </a>
+            <?php if (isset($_SESSION['role_id'])): ?>
+                
+                <?php if($_SESSION['role_id'] == 1): ?>
+                    <a class="nav-link text-danger fw-bold ms-2" href="admin_users.php">Panel Admin</a>
                 <?php endif; ?>
 
-                <a class="btn btn-outline-danger btn-sm ms-3" href="logout.php">Déconnexion</a>
+                <?php if($_SESSION['role_id'] == 1 || $_SESSION['role_id'] == 2): ?>
+                    <a class="nav-link text-warning fw-bold ms-2" href="admin_reviews.php">Modération Avis</a>
+                <?php endif; ?>
+
+                <?php if($_SESSION['role_id'] == 3): ?>
+                    <a class="nav-link text-success fw-bold ms-2" href="add_review.php">Laisser un avis</a>
+                <?php endif; ?>
+
+                <span class="navbar-text ms-3">Bonjour, <strong><?= htmlspecialchars($_SESSION['prenom'] ?? 'Utilisateur') ?></strong></span>
+                <a class="btn btn-outline-danger btn-sm ms-2" href="logout.php">Déconnexion</a>
+
             <?php else: ?>
-                <a class="btn btn-primary text-white ms-3" href="login.php">Connexion</a>
+                <a class="btn btn-outline-primary btn-sm ms-2" href="login.php">Connexion</a>
+                <a class="btn btn-primary btn-sm text-white ms-2" href="register.php">Inscription</a>
             <?php endif; ?>
         </div>
     </div>
