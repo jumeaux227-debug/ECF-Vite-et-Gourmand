@@ -13,39 +13,36 @@ if (session_status() === PHP_SESSION_NONE) {
     <title>Vite et Gourmand</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-    <div class="container">
-        <a class="navbar-brand fw-bold" href="index.php" style="color: var(--main-orange);">Vite et Gourmand</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+    <div class="container px-5">
+        <a class="navbar-brand fw-bold text-dark fs-4" href="index.php">Vite et Gourmand</a>
         
-        <div class="navbar-nav ms-auto align-items-center">
-            <a class="nav-link text-dark fw-bold ms-2" href="index.php">Accueil</a>
-            <a class="nav-link text-dark fw-bold ms-2" href="menus.php">Nos Menus</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                <li class="nav-item"><a class="nav-link text-dark fw-bold ms-2" href="index.php">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link text-dark fw-bold ms-2" href="menus.php">Nos Menus</a></li>
 
-            <?php if (isset($_SESSION['role_id'])): ?>
-                
-                <?php if($_SESSION['role_id'] == 1): ?>
-                    <a class="nav-link text-danger fw-bold ms-2" href="admin_users.php">Panel Admin</a>
+                <?php if (isset($_SESSION['role_id'])): ?>
+                    <?php if($_SESSION['role_id'] == 1): ?>
+                        <li class="nav-item"><a class="nav-link text-danger fw-bold ms-2" href="admin_users.php">Panel Admin</a></li>
+                    <?php endif; ?>
+
+                    <?php if($_SESSION['role_id'] == 1 || $_SESSION['role_id'] == 2): ?>
+                        <li class="nav-item"><a class="nav-link text-warning fw-bold ms-2" href="admin_reviews.php">Modération Avis</a></li>
+                    <?php endif; ?>
+
+                    <?php if($_SESSION['role_id'] == 3): ?>
+                        <li class="nav-item"><a class="nav-link text-success fw-bold ms-2" href="add_review.php">Laisser un avis</a></li>
+                    <?php endif; ?>
+
+                    <li class="nav-item ms-3 text-muted small">Bonjour, <strong><?= htmlspecialchars($_SESSION['prenom'] ?? 'Utilisateur') ?></strong></li>
+                    <li class="nav-item ms-2"><a class="btn btn-outline-danger btn-sm" href="logout.php">Déconnexion</a></li>
+
+                <?php else: ?>
+                    <li class="nav-item ms-2"><a class="btn btn-outline-primary btn-sm" href="login.php">Connexion</a></li>
+                    <li class="nav-item ms-2"><a class="btn btn-primary btn-sm text-white" href="register.php">Inscription</a></li>
                 <?php endif; ?>
-
-                <?php if($_SESSION['role_id'] == 1 || $_SESSION['role_id'] == 2): ?>
-                    <a class="nav-link text-warning fw-bold ms-2" href="admin_reviews.php">Modération Avis</a>
-                <?php endif; ?>
-
-                <?php if($_SESSION['role_id'] == 3): ?>
-                    <a class="nav-link text-success fw-bold ms-2" href="add_review.php">Laisser un avis</a>
-                <?php endif; ?>
-
-<<<<<<< HEAD
-                <span class="navbar-text ms-3">Bonjour, <strong><?= htmlspecialchars($_SESSION['prenom'] ?? 'Utilisateur') ?></strong></span>
-                <a class="btn btn-outline-danger btn-sm ms-2" href="logout.php">Déconnexion</a>
-
-=======
-                <a class="btn btn-outline-danger btn-sm ms-3" href="logout.php">Déconnexion</a>
->>>>>>> feature/reviews-management
-            <?php else: ?>
-                <a class="btn btn-outline-primary btn-sm ms-2" href="login.php">Connexion</a>
-                <a class="btn btn-primary btn-sm text-white ms-2" href="register.php">Inscription</a>
-            <?php endif; ?>
+            </ul>
         </div>
     </div>
 </nav>
