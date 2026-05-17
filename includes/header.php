@@ -31,6 +31,14 @@ if (session_status() === PHP_SESSION_NONE) {
                     </a>
                 <?php endif; ?>
 
+                <?php if($_SESSION['role_id'] == 1): ?>
+                    <a class="nav-link text-danger fw-bold ms-2" href="admin_users.php">Panel Admin</a>
+                <?php endif; ?>
+
+                <?php if($_SESSION['role_id'] == 1 || $_SESSION['role_id'] == 2): ?>
+                    <a class="nav-link text-warning fw-bold ms-2" href="admin_reviews.php">Modération Avis</a>
+                <?php endif; ?>
+
                 <a class="btn btn-outline-danger btn-sm ms-3" href="logout.php">Déconnexion</a>
             <?php else: ?>
                 <a class="btn btn-primary text-white ms-3" href="login.php">Connexion</a>
