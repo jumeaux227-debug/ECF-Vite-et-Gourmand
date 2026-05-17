@@ -35,9 +35,13 @@ if (session_status() === PHP_SESSION_NONE) {
                     <a class="nav-link text-success fw-bold ms-2" href="add_review.php">Laisser un avis</a>
                 <?php endif; ?>
 
+<<<<<<< HEAD
                 <span class="navbar-text ms-3">Bonjour, <strong><?= htmlspecialchars($_SESSION['prenom'] ?? 'Utilisateur') ?></strong></span>
                 <a class="btn btn-outline-danger btn-sm ms-2" href="logout.php">Déconnexion</a>
 
+=======
+                <a class="btn btn-outline-danger btn-sm ms-3" href="logout.php">Déconnexion</a>
+>>>>>>> feature/reviews-management
             <?php else: ?>
                 <a class="btn btn-outline-primary btn-sm ms-2" href="login.php">Connexion</a>
                 <a class="btn btn-primary btn-sm text-white ms-2" href="register.php">Inscription</a>
