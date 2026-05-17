@@ -1,7 +1,11 @@
 # Vite et Gourmand
 
+
 # admin@gmail.com
 # admin12345
 
-# test@gmail.com
-# test
+# perso@gmail.com
+# perso12345
+
+# client@gmail.com
+# client12345
