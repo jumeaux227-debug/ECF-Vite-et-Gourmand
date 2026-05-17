@@ -8,8 +8,8 @@ if (!isset($_SESSION['role_id']) || ($_SESSION['role_id'] != 1 && $_SESSION['rol
     exit();
 }
 
-// Récupération de tous les avis avec le nom du client
-$stmt = $pdo->query("SELECT a.*, u.prenom, u.nom FROM avis a JOIN utilisateur u ON a.utilisateur_id = u.utilisateur_id ORDER BY a.date_creation DESC");
+// Tri par avis_id 
+$stmt = $pdo->query("SELECT a.avis_id, a.description, a.note, a.statut, u.prenom, u.nom FROM avis a JOIN utilisateur u ON a.utilisateur_id = u.utilisateur_id ORDER BY a.avis_id DESC");
 $reviews = $stmt->fetchAll();
 ?>
 
@@ -39,7 +39,7 @@ $reviews = $stmt->fetchAll();
                     <?php foreach ($reviews as $review): ?>
                     <tr>
                         <td><strong><?= htmlspecialchars($review['prenom'] . ' ' . $review['nom']) ?></strong></td>
-                        <td><p class="mb-0 text-wrap" style="max-width: 400px;"><?= htmlspecialchars($review['commentaire']) ?></p></td>
+                        <td><p class="mb-0 text-wrap" style="max-width: 400px;"><?= htmlspecialchars($review['description']) ?></p></td>
                         <td><span class="text-warning">★</span> <?= $review['note'] ?>/5</td>
                         <td>
                             <?php if($review['statut'] === 'valide'): ?>
