@@ -61,7 +61,7 @@ $commandes = $stmt->fetchAll();
                             <tr>
                                 <td><strong><?= htmlspecialchars($cmd['numero_commande']) ?></strong></td>
                                 <td><span class="fw-bold text-dark"><?= htmlspecialchars($cmd['menu_titre']) ?></span></td>
-                                <td><?= date('d/m/Y', strtotime($cmd['data_prestation'])) ?></td>
+                                <td><?= date('d/m/Y', strtotime($cmd['date_prestation'])) ?></td>
                                 <td><span class="fw-bold text-primary"><?= number_format($cmd['prix_menu'], 2, ',', ' ') ?> €</span></td>
                                 <td>
                                     <?php 
