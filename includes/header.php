@@ -26,11 +26,11 @@ if (session_status() === PHP_SESSION_NONE) {
                 <?php if (isset($_SESSION['role_id'])): ?>
                     <?php if($_SESSION['role_id'] == 1): ?>
                         <li class="nav-item"><a class="nav-link text-danger fw-bold ms-2" href="admin_users.php">Panel Admin</a></li>
+                        <a class="nav-link text-danger fw-bold ms-2" href="admin_rh.php">👑 Gestion RH</a>
                     <?php endif; ?>
 
                     <?php if($_SESSION['role_id'] == 1 || $_SESSION['role_id'] == 2): ?>
                         <li class="nav-item"><a class="nav-link text-warning fw-bold ms-2" href="admin_reviews.php">Modération Avis</a></li>
-                        <a class="nav-link text-danger fw-bold ms-2" href="admin_rh.php">👑 Gestion RH</a>
                     <?php endif; ?>
 
                     <?php if($_SESSION['role_id'] == 3): ?>
