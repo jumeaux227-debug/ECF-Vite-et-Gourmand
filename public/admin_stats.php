@@ -11,7 +11,10 @@ if (!isset($_SESSION['role_id']) || $_SESSION['role_id'] != 1) {
 $file_path = __DIR__ . '/../data/menu_stats.json';
 $stats = [];
 if (file_exists($file_path)) {
-    $stats = json_decode(file_get_contents($file_path), true) ?? [];
+    // Le paramètre JSON_UNESCAPED_UNICODE est souvent utilisé à l'écriture, 
+    // ici on s'assure de lire proprement le contenu
+    $json_content = file_get_contents($file_path);
+    $stats = json_decode($json_content, true) ?? [];
 }
 
 // Préparation des données pour Chart.js
@@ -19,8 +22,10 @@ $labels = [];
 $data_views = [];
 
 foreach ($stats as $menu_title => $info) {
-    $labels[] = $menu_title;
-    $data_views[] = $info['total_views'];
+    // On force le décodage au cas où une chaîne contiendrait encore des séquences \uXXXX
+    $clean_title = json_decode('"' . $menu_title . '"') ?? $menu_title;
+    $labels[] = $clean_title;
+    $data_views[] = $info['total_views'] ?? 0;
 }
 ?>
 

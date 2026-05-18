@@ -27,6 +27,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     <?php if($_SESSION['role_id'] == 1): ?>
                         <li class="nav-item"><a class="nav-link text-danger fw-bold ms-2" href="admin_users.php">Panel Admin</a></li>
                         <a class="nav-link text-danger fw-bold ms-2" href="admin_rh.php">👑 Gestion RH</a>
+                        <a class="nav-link text-success fw-bold ms-2" href="admin_stats.php">📈 Stats NoSQL</a>
                     <?php endif; ?>
 
                     <?php if($_SESSION['role_id'] == 1 || $_SESSION['role_id'] == 2): ?>
