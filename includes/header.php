@@ -33,6 +33,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
                     <?php if($_SESSION['role_id'] == 3): ?>
                         <li class="nav-item"><a class="nav-link text-success fw-bold ms-2" href="add_review.php">Laisser un avis</a></li>
+                        <a class="nav-link text-primary fw-bold ms-2" href="espace_client.php">Mes Commandes</a>
                     <?php endif; ?>
 
                     <li class="nav-item ms-3 text-muted small">Bonjour, <strong><?= htmlspecialchars($_SESSION['prenom'] ?? 'Utilisateur') ?></strong></li>
