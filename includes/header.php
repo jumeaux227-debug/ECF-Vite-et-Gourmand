@@ -36,6 +36,10 @@ if (session_status() === PHP_SESSION_NONE) {
                         <a class="nav-link text-primary fw-bold ms-2" href="espace_client.php">Mes Commandes</a>
                     <?php endif; ?>
 
+                    <?php if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1 || $_SESSION['role_id'] == 2)): ?>
+                        <a class="nav-link text-warning fw-bold ms-2" href="employe_dashboard.php">💼 Espace Employé</a>
+                    <?php endif; ?>
+
                     <li class="nav-item ms-3 text-muted small">Bonjour, <strong><?= htmlspecialchars($_SESSION['prenom'] ?? 'Utilisateur') ?></strong></li>
                     <li class="nav-item ms-2"><a class="btn btn-outline-danger btn-sm" href="logout.php">Déconnexion</a></li>
 
