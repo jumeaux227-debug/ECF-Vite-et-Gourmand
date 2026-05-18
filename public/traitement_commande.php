@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data_prestation = $_POST['date_livraison']; // Date de l'événement
     $utilisateur_id = $_SESSION['user_id'];
 
-    // 1. Récupération avec l'orthographe exacte du MCD : quantite_restante
+    // 1. REQUÊTE CORRIGÉE : Orthographe stricte du MCD -> quantite_restante
     $stmt = $pdo->prepare("SELECT prix_par_personne, nombre_personne_minimum, quantite_restante FROM menu WHERE menu_id = ?");
     $stmt->execute([$menu_id]);
     $menu = $stmt->fetch();
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Erreur : Menu introuvable.");
     }
 
-    // 2. Validations strictes basées sur les stocks réels
+    // 2. Validations basées sur les stocks réels (utilisation de quantite_restante)
     if ($nombre_personne < $menu['nombre_personne_minimum']) {
         die("Erreur : Le nombre de convives est inférieur au minimum requis (" . $menu['nombre_personne_minimum'] . " personnes).");
     }
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $numero_commande,
         $data_commande,
         $data_prestation,
-        '12:00', // Heure par défaut ajustable ou récupérable
+        '12:00', // Heure par défaut
         $prix_menu,
         $nombre_personne,
         $prix_livraison,
@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ];
 
     if ($stmtInsert->execute($params)) {
-        // Mise à jour logique du stock restant
+        // Mise à jour logique du stock restant avec l'orthographe du MCD (quantite_restante)
         $stmtUpdateStock = $pdo->prepare("UPDATE menu SET quantite_restante = quantite_restante - ? WHERE menu_id = ?");
         $stmtUpdateStock->execute([$nombre_personne, $menu_id]);
 
