@@ -21,6 +21,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
                 <li class="nav-item"><a class="nav-link text-dark fw-bold ms-2" href="index.php">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link text-dark fw-bold ms-2" href="menus.php">Nos Menus</a></li>
+                <li class="nav-item"><a class="nav-link text-dark fw-bold ms-2" href="contact.php">Contact</a></li>
 
                 <?php if (isset($_SESSION['role_id'])): ?>
                     <?php if($_SESSION['role_id'] == 1): ?>
@@ -29,6 +30,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
                     <?php if($_SESSION['role_id'] == 1 || $_SESSION['role_id'] == 2): ?>
                         <li class="nav-item"><a class="nav-link text-warning fw-bold ms-2" href="admin_reviews.php">Modération Avis</a></li>
+                        <a class="nav-link text-danger fw-bold ms-2" href="admin_rh.php">👑 Gestion RH</a>
                     <?php endif; ?>
 
                     <?php if($_SESSION['role_id'] == 3): ?>
@@ -39,6 +41,8 @@ if (session_status() === PHP_SESSION_NONE) {
                     <?php if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1 || $_SESSION['role_id'] == 2)): ?>
                         <a class="nav-link text-warning fw-bold ms-2" href="employe_dashboard.php">💼 Espace Employé</a>
                     <?php endif; ?>
+
+                    
 
                     <li class="nav-item ms-3 text-muted small">Bonjour, <strong><?= htmlspecialchars($_SESSION['prenom'] ?? 'Utilisateur') ?></strong></li>
                     <li class="nav-item ms-2"><a class="btn btn-outline-danger btn-sm" href="logout.php">Déconnexion</a></li>
