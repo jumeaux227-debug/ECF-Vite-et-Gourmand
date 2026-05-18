@@ -20,12 +20,16 @@ $stmtMenu = $pdo->prepare($queryMenu);
 $stmtMenu->execute([$menu_id]);
 $menu = $stmtMenu->fetch();
 
-// Si le menu n'existe pas en base de données
+// Si le menu n'existe pas en base de données, on arrête tout
 if (!$menu) {
     echo "<div class='container py-5'><div class='alert alert-danger text-center'>Ce menu n'existe pas ou a été retiré.</div></div>";
     require_once __DIR__ . '/../includes/footer.php';
     exit();
 }
+
+// L'emplacement est corrigé ici : Le menu existe bien, on enregistre sa consultation pour l'étape 4
+require_once __DIR__ . '/../includes/log_tracker.php';
+track_menu_view($menu['titre']);
 
 // 2. Récupération des plats associés à ce menu via la table associative menu_plat
 $queryPlats = "SELECT p.* FROM plat p

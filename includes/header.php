@@ -35,6 +35,11 @@ if (session_status() === PHP_SESSION_NONE) {
                         <li class="nav-item"><a class="nav-link text-success fw-bold ms-2" href="add_review.php">Laisser un avis</a></li>
                     <?php endif; ?>
 
+                    <?php if($_SESSION['role_id'] == 1): ?>
+                        <a class="nav-link text-danger fw-bold ms-2" href="admin_users.php">Panel Admin</a>
+                        <a class="nav-link text-info fw-bold ms-2" href="admin_stats.php">Stats Menus</a>
+                    <?php endif; ?>
+
                     <li class="nav-item ms-3 text-muted small">Bonjour, <strong><?= htmlspecialchars($_SESSION['prenom'] ?? 'Utilisateur') ?></strong></li>
                     <li class="nav-item ms-2"><a class="btn btn-outline-danger btn-sm" href="logout.php">Déconnexion</a></li>
 
