@@ -27,7 +27,7 @@
             </section>
 
             <section class="mb-4 text-danger bg-danger bg-opacity-10 p-4 rounded border border-danger">
-                <h2 class="h4 fw-bold"><style="color: #dc3545;">Article 4 : Prêt de Matériel et Pénalité de Retard</style></h2>
+                <h2 class="h4 fw-bold" style="color: #dc3545;">Article 4 : Prêt de Matériel et Pénalité de Retard</h2>
                 <p class="mb-0">Lors de certaines prestations, du matériel professionnel de rôtisserie et de maintien au chaud peut être mis gratuitement à disposition du client. **Ce matériel doit impérativement être restitué dans un délai maximal de 10 jours** suivant la date de la prestation. À défaut de restitution dans ces délais, une pénalité contractuelle forfaitaire de **600,00 €** sera automatiquement facturée pour couvrir le renouvellement des équipements.</p>
             </section>
         </div>
