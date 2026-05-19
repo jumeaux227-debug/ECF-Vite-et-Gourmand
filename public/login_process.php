@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user_id'] = $user['utilisateur_id']; // Vérifie que c'est bien 'id' en BDD
         
         // ATTENTION ICI : Vérifie si ta colonne s'appelle 'prenom' ou 'nom' ou 'username'
-        $_SESSION['user_name'] = $user['prenom']; 
+        $_SESSION['prenom'] = $user['prenom']; 
         
         $_SESSION['role_id'] = $user['role_id'];
 

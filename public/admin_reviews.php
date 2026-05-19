@@ -1,6 +1,9 @@
 <?php 
+
 require_once __DIR__ . '/../includes/header.php';
+
 require_once __DIR__ . '/../includes/db_connect.php';
+
 
 // PROTECTION : Seuls l'Admin (1) et l'Employé (2) ont accès
 if (!isset($_SESSION['role_id']) || ($_SESSION['role_id'] != 1 && $_SESSION['role_id'] != 2)) {
