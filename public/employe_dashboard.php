@@ -41,7 +41,7 @@ $commandes = $stmt->fetchAll();
 <div class="container-fluid py-5 px-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
-            <h1 class="fw-bold">Espace Gestion Rôtisserie</h1>
+            <h1 class="fw-bold">Espace Gestion</h1>
             <p class="text-muted">Gérez les commandes, le cycle de vie des prestations et le suivi du matériel.</p>
         </div>
         <span class="badge bg-dark p-2">Accès Personnel</span>

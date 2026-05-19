@@ -1,8 +1,14 @@
 <?php
+// 1. ON FORCE L'AFFICHAGE DES ERREURS PARTOUT
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// 2. ON INCLUT LE FICHIER DE CONNEXION
 require_once __DIR__ . '/../includes/db_connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // 1. On récupère et on nettoie les données
+    // On récupère et on nettoie les données
     $firstname = htmlspecialchars(trim($_POST['firstname']));
     $lastname  = htmlspecialchars(trim($_POST['lastname']));
     $email     = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
@@ -10,11 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (!empty($firstname) && !empty($lastname) && !empty($email) && !empty($password)) {
         
-        // 2. ÉTAPE CRUCIALE : Le hachage du mot de passe
+        // Hachage du mot de passe
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        // 3. Préparation de la requête (on met role_id = 3 pour un client par défaut)
-        // Vérifie bien que tes noms de colonnes correspondent à ton structure.sql
+        // Préparation de la requête
         $sql = "INSERT INTO utilisateur (email, password, prenom, nom, role_id) VALUES (:email, :pass, :prenom, :nom, 3)";
         $stmt = $pdo->prepare($sql);
         
@@ -31,12 +36,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
 
         } catch (PDOException $e) {
-            // Si l'email existe déjà par exemple
-            header('Location: register.php?error=email_taken');
-            exit();
+            // S'il y a une erreur SQL, elle va s'afficher ici au lieu de faire une page blanche !
+            die("Erreur SQL lors de l'insertion : " . $e->getMessage());
         }
     } else {
         header('Location: register.php?error=empty_fields');
         exit();
     }
+} else {
+    die("Le formulaire n'a pas été envoyé en POST.");
 }
