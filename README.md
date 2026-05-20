@@ -15,7 +15,7 @@
 3. Créez une nouvelle base de données nommée exactement : **`vite_et_gourmand`** (choisir l'interclassement `utf8mb4_general_ci`).
 4. Cliquez sur l'onglet **Importer**, sélectionnez le fichier SQL que vous aurez téléchargé :  
    `
-5. Cliquez sur **Importer** en bas de la page pour injecter les tables et le jeu d'essai.
+5. Cliquez sur **Importer** pour importer la bdd.
 
 ---
 
@@ -34,13 +34,11 @@ Vérifiez que le fichier `includes/db_connect.php` utilise bien les identifiants
 ### Depuis le PC de développement :
 Cliqué sur l'url du serveur dans le terminal
 
-### Depuis un Smartphone (Démonstration Mobile) : ( pas fonctionnel )
-1. Récupérez l'adresse IP du PC de test (via la commande `ipconfig` dans l'invite de commandes Windows, ex: `192.168.1.45`).
-2. Connectez le smartphone sur le **même réseau Wi-Fi** que le PC.
-3. Désactivez temporairement le **Pare-feu Windows** (réseau privé).
-4. Saisissez l'URL suivante sur le navigateur du smartphone :  
-   👉 `http://192.168.1.45/julie_jose/public/index.php`
+### Depuis un Smartphone (Démonstration Mobile) : 
+Connexion mobile pas fonctionnel (j'ai pas réussi), mais site responsive possibilité de tester avec la fonction inspecter sur pc
 
+* Cliqué sur inspecté sur une des pages, aller en haut a gauche
+* Cliqué sur l'icone mobile, tablette et choisir la résolution
 ---
 
 ## 🔑 5. Comptes de Test inclus

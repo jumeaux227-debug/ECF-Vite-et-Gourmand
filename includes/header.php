@@ -9,7 +9,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/style.css">
     <title>Julie & José - Rôtisserie</title>
 
@@ -35,6 +35,7 @@ if (session_status() === PHP_SESSION_NONE) {
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             padding-top: 0.75rem;
             padding-bottom: 0.75rem;
+            position: relative;
         }
 
         .navbar-brand {
@@ -90,6 +91,46 @@ if (session_status() === PHP_SESSION_NONE) {
             background-color: var(--primary-orange) !important;
             color: #FFFFFF !important;
         }
+
+        /* Sécurité visuelle pour le bouton burger sur fond blanc */
+        .navbar-toggler {
+            border-color: rgba(0, 0, 0, 0.1) !important;
+        }
+        .navbar-toggler-icon {
+            filter: invert(0.2);
+        }
+
+        /* --- STYLE DE LA BULLE MENU DÉROULANT MOBILE À GAUCHE --- */
+        @media (max-width: 991.98px) {
+            .navbar-collapse.collapse.show, .navbar-collapse.collapsing {
+                display: block !important;
+                position: absolute;
+                top: 100%;
+                right: 15px; /* Aligné vers la droite*/
+                width: 260px; /* Taille d'une petite bulle de menu */
+                background-color: #FFFFFF !important;
+                border: 1px solid rgba(0,0,0,0.15);
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                padding: 15px !important;
+                z-index: 1050;
+            }
+            
+            .navbar-nav {
+                align-items: flex-start !important; /* Aligne les textes à gauche à l'intérieur */
+                width: 100%;
+            }
+
+            .navbar-nav .nav-item {
+                width: 100%;
+                text-align: left;
+                margin-bottom: 8px;
+            }
+            
+            .navbar-nav .nav-link {
+                padding: 5px 0 !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -97,7 +138,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <div class="container-fluid px-4">
         <a class="navbar-brand fw-bold" href="index.php">Julie & José</a>
         
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" id="mainBurgerBtn" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -138,3 +179,17 @@ if (session_status() === PHP_SESSION_NONE) {
         </div>
     </div>
 </nav>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var burger = document.getElementById("mainBurgerBtn");
+    var menu = document.getElementById("navbarSupportedContent");
+
+    if (burger && menu) {
+        burger.addEventListener("click", function(event) {
+            event.preventDefault();
+            menu.classList.toggle("show");
+        });
+    }
+});
+</script>

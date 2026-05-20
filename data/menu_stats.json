@@ -7,9 +7,15 @@
         }
     },
     "Menu D\u00e9couverte Terroir": {
-        "total_views": 4,
+        "total_views": 5,
         "history": {
-            "2026-05-20": 4
+            "2026-05-20": 5
+        }
+    },
+    "Menu Soleil M\u00e9diterran\u00e9en": {
+        "total_views": 1,
+        "history": {
+            "2026-05-20": 1
         }
     }
 }
