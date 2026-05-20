@@ -34,7 +34,7 @@ Vérifiez que le fichier `includes/db_connect.php` utilise bien les identifiants
 ### Depuis le PC de développement :
 Cliqué sur l'url du serveur dans le terminal
 
-### Depuis un Smartphone (Démonstration Mobile) :
+### Depuis un Smartphone (Démonstration Mobile) : ( pas fonctionnel )
 1. Récupérez l'adresse IP du PC de test (via la commande `ipconfig` dans l'invite de commandes Windows, ex: `192.168.1.45`).
 2. Connectez le smartphone sur le **même réseau Wi-Fi** que le PC.
 3. Désactivez temporairement le **Pare-feu Windows** (réseau privé).
