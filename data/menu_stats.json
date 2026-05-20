@@ -1,8 +1,15 @@
 {
     "Menu Saveurs d'Asie (V\u00e9g\u00e9tarien)": {
-        "total_views": 2,
+        "total_views": 3,
         "history": {
-            "2026-05-19": 2
+            "2026-05-19": 2,
+            "2026-05-20": 1
+        }
+    },
+    "Menu D\u00e9couverte Terroir": {
+        "total_views": 4,
+        "history": {
+            "2026-05-20": 4
         }
     }
 }
