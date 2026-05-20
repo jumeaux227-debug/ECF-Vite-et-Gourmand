@@ -2,8 +2,8 @@
     <div class="container">
         <div class="row g-4">
             <div class="col-md-4">
-                <h5 class="fw-bold text-primary mb-3">Julie & José Rôtisserie</h5>
-                <p class="small text-white-50">Votre rôtisserie traditionnelle sur Bordeaux et ses alentours. Des produits locaux, un savoir-faire authentique pour tous vos événements.</p>
+                <h5 class="fw-bold text-primary mb-3">Julie & José </h5>
+                <p class="small text-white-50">Votre entreprise traditionnelle sur Bordeaux et ses alentours. Des produits locaux, un savoir-faire authentique pour tous vos événements.</p>
             </div>
 
             <div class="col-md-5">
@@ -41,7 +41,7 @@
 
         <div class="row small text-white-50">
             <div class="col-md-6 text-center text-md-start">
-                <p class="mb-0">&copy; <?= date('Y') ?> Julie & José Rôtisserie. Tous droits réservés.</p>
+                <p class="mb-0">&copy; <?= date('Y') ?> Julie & José . Tous droits réservés.</p>
             </div>
             <div class="col-md-6 text-center text-md-end">
                 <p class="mb-0">Site web conforme aux normes d'accessibilité <abbr title="Référentiel Général d'Amélioration de l'Accessibilité" class="text-white text-decoration-none">RGAA</abbr></p>

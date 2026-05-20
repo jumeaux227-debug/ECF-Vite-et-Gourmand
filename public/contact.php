@@ -7,7 +7,7 @@ require_once __DIR__ . '/../includes/header.php';
         <div class="col-lg-5">
             <span class="badge bg-primary px-3 py-2 mb-3">📍 Bordeaux & Alentours</span>
             <h1 class="display-5 fw-bold mb-3">Contactez Julie & José</h1>
-            <p class="text-secondary lead mb-4">Une demande pour un événement particulier, un mariage, un repas associatif ou une question sur nos rôtis locaux ? Notre équipe vous répond sous 24h.</p>
+            <p class="text-secondary lead mb-4">Une demande pour un événement particulier, un mariage, un repas associatif ou une question sur nos plats locaux ? Notre équipe vous répond sous 24h.</p>
             
             <div class="d-flex align-items-center gap-3 mb-3">
                 <div class="bg-light p-3 rounded-circle text-primary fw-bold">📞</div>
@@ -20,7 +20,7 @@ require_once __DIR__ . '/../includes/header.php';
                 <div class="bg-light p-3 rounded-circle text-primary fw-bold">✉️</div>
                 <div>
                     <span class="text-muted small d-block">Courriel général</span>
-                    <strong>contact@julie-jose-rotisserie.fr</strong>
+                    <strong>contact@julie-jose-restaurant.fr</strong>
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@ require_once __DIR__ . '/../includes/header.php';
                         </div>
                         <div class="mb-4">
                             <label class="form-label small fw-bold">Description détaillée de votre projet</label>
-                            <textarea name="description" rows="5" class="form-control" placeholder="Indiquez ici le nombre de convives, la date souhaitée, les options de rôtisserie..." required></textarea>
+                            <textarea name="description" rows="5" class="form-control" placeholder="Indiquez ici le nombre de convives, la date souhaitée, les menus..." required></textarea>
                         </div>
                         <button type="submit" name="send_contact" class="btn btn-primary btn-lg text-white fw-bold w-100 shadow-sm">
                             Envoyer ma demande

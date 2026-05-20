@@ -10,10 +10,10 @@
 
             <section class="mb-4">
                 <h2 class="h4 fw-bold text-dark">1. Éditeur du Site</h2>
-                <p>Le présent site internet est édité par l'entreprise <strong>Julie & José Rôtisserie</strong>, Société par Actions Simplifiée (SAS) au capital de 5 000 €, immatriculée au Registre du Commerce et des Sociétés (RCS) de Bordeaux sous le numéro SIRET 123 456 789 00012.</p>
+                <p>Le présent site internet est édité par l'entreprise <strong>Julie & José Restaurant</strong>, Société par Actions Simplifiée (SAS) au capital de 5 000 €, immatriculée au Registre du Commerce et des Sociétés (RCS) de Bordeaux sous le numéro SIRET 123 456 789 00012.</p>
                 <p><strong>Siège social :</strong> 10 Cours de l'Intendance, 33000 Bordeaux<br>
                 <strong>Directeurs de la publication :</strong> Julie & José<br>
-                <strong>Contact :</strong> contact@julie-jose-rotisserie.fr | 05 56 00 00 00</p>
+                <strong>Contact :</strong> contact@julie-jose-restaurant .fr | 05 56 00 00 00</p>
             </section>
 
             <section class="mb-4">
@@ -25,13 +25,13 @@
 
             <section class="mb-4">
                 <h2 class="h4 fw-bold text-dark">3. Propriété Intellectuelle</h2>
-                <p>Tous les éléments graphiques, textuels, visuels et photographiques présents sur ce site sont protégés par le droit d'auteur. Toute reproduction, représentation ou diffusion, totale ou partielle, sans l'accord exprès de Julie & José Rôtisserie est strictement interdite.</p>
+                <p>Tous les éléments graphiques, textuels, visuels et photographiques présents sur ce site sont protégés par le droit d'auteur. Toute reproduction, représentation ou diffusion, totale ou partielle, sans l'accord exprès de Julie & José Restaurant est strictement interdite.</p>
             </section>
 
             <section class="mb-4">
                 <h2 class="h4 fw-bold text-dark">4. Protection des Données Personnelles (RGPD)</h2>
                 <p>Conformément au Règlement Général sur la Protection des Données (RGPD), les informations collectées lors de vos commandes (nom, adresse, email) sont uniquement utilisées pour le traitement de vos réservations et la gestion logistique de la livraison.</p>
-                <p>Vous disposez d'un droit d'accès, de rectification et de suppression de vos données en écrivant à : <code class="text-dark">rgpd@julie-jose-rotisserie.fr</code>.</p>
+                <p>Vous disposez d'un droit d'accès, de rectification et de suppression de vos données en écrivant à : <code class="text-dark">rgpd@julie-jose-restaurant.fr</code>.</p>
             </section>
         </div>
     </div>
